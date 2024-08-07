@@ -8,28 +8,34 @@ import { WelcomePage } from "./views/WelcomePage";
 import { MainProvider } from "./store/mainStore";
 import { Footer } from "./components/Footer";
 import { Box } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
+import { baseTheme } from "./theme/baseTheme";
+import { BitcoinRates } from "./views/BitcoinRates";
 
 const App = () => {
   //RETURN
   return (
     <MainProvider>
-      <Box display={'flex'} flexDirection={'column'} height={'100vh'}>
-      <Navbar />
+      <ThemeProvider theme={baseTheme}>
+        <Box display={'flex'} flexDirection={'column'} height={'100vh'}>
+          <Navbar />
 
-      <Routes>
-        <Route index element={<LoginForm />} />
+          <Routes>
+            <Route index element={<LoginForm />} />
 
-        <Route path="home" element={<WelcomePage />} />
+            <Route path="home" element={<WelcomePage />} />
+            <Route path="bitcoin-rates" element={<BitcoinRates />} />
 
-        <Route
-          path="*"
-          element={<div>Hey this path doesnt exist yet...</div>}
-        />
-      </Routes>
+            <Route
+              path="*"
+              element={<div>Hey this path doesnt exist yet...</div>}
+            />
+          </Routes>
 
-      <Footer />
+          <Footer />
 
-      </Box>
+        </Box>
+      </ThemeProvider>
     </MainProvider>
   );
 };

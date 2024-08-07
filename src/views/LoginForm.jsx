@@ -45,8 +45,8 @@ export const LoginForm = () => {
 
   const handleSubmit = () => {
     // API CALL
-    
-    
+
+
 
     axios
       .post("http://localhost:8000/user-auth", { email, password })
@@ -105,6 +105,7 @@ export const LoginForm = () => {
             variant="outlined"
             sx={standardTopPadding}
             onChange={handlePasswordChange}
+            type="password"
           />
           <FormControlLabel
             control={

@@ -12,7 +12,8 @@ import Link from "@mui/material/Link";
 import { LetterAvatar } from "./LetterAvatar";
 import { useMainContext } from "../store/mainStore";
 
-const pages = [{ title: "Home", href: "/home" }];
+const pages = [{ title: "Home", href: "/home" },
+{ title: "Bitcoin", href: "/bitcoin-rates" }];
 
 export const Navbar = () => {
   const { currentUser } = useMainContext();
